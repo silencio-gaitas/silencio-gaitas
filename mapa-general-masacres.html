@@ -1,0 +1,417 @@
+<!doctype html>
+<html><head>
+    <meta charset="utf-8">
+    <title>Ubicación real de las masacres</title>
+
+	
+	
+	
+	
+	
+<!--CSS LEAFLET-->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+<!--FIN CSS LEAFLET-->
+<!--css normal-->
+	
+	<link rel="stylesheet" href="css/style.css"/>	
+<!--archivo JavaScript LEAFLET-->
+	 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>	
+<!-- FIN archivo JavaScript LEAFLET-->	
+<!--enrutador leaf let-->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+ <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+ 
+ <script src="leaflet-routing-machine-3.2.5/dist/leaflet-routing-machine.js"></script>
+<link rel="stylesheet" href="leaflet-routing-machine-3.2.5/dist/leaflet-routing-machine.css" /> 	
+	
+<!--finenrutador leaf let-->	
+</head>
+
+<body>
+	
+
+	
+<!--UBIACACION DEL MAPA-->
+	
+	
+	<div id="map">
+
+<!--texto JavaScript LEAFLET-->		
+		
+    <script> 
+		
+		 var map = L.map('map',{ 
+          center: [9.6552436,-75.3206733], 
+          zoom: 10, 
+          minZoom: 9, 
+          maxZoom: 15 }); 
+          
+         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map); 
+    </script> 
+		
+		
+  <script>    
+    var Icono = L.icon({
+        iconUrl: "imagenes/1.png",
+        iconSize: [30, 40],
+        iconAnchor: [15, 40],
+        shadowUrl: "https://vivaelsoftwarelibre.com/wp-content/uploads/2020/05/icono_sombra.png",
+        shadowSize: [35, 50],
+        shadowAnchor: [0, 55],
+        popupAnchor: [0, -40]});
+    
+	  
+	    var Icono2 = L.icon({
+        iconUrl: "imagenes/2.png",
+        iconSize: [30, 40],
+        iconAnchor: [15, 40],
+        shadowUrl: "https://vivaelsoftwarelibre.com/wp-content/uploads/2020/05/icono_sombra.png",
+        shadowSize: [35, 50],
+        shadowAnchor: [0, 55],
+        popupAnchor: [0, -40]});  
+	  
+	      var Icono3 = L.icon({
+        iconUrl: "imagenes/3.png",
+        iconSize: [30, 40],
+        iconAnchor: [15, 40],
+        shadowUrl: "https://vivaelsoftwarelibre.com/wp-content/uploads/2020/05/icono_sombra.png",
+        shadowSize: [35, 50],
+        shadowAnchor: [0, 55],
+        popupAnchor: [0, -40]});  
+	  
+	  
+	      var Icono4 = L.icon({
+        iconUrl: "imagenes/4.png",
+        iconSize: [30, 40],
+        iconAnchor: [15, 40],
+        shadowUrl: "https://vivaelsoftwarelibre.com/wp-content/uploads/2020/05/icono_sombra.png",
+        shadowSize: [35, 50],
+        shadowAnchor: [0, 55],
+        popupAnchor: [0, -40]});  
+	  
+	      var Icono5 = L.icon({
+        iconUrl: "imagenes/5.png",
+        iconSize: [30, 40],
+        iconAnchor: [15, 40],
+        shadowUrl: "https://vivaelsoftwarelibre.com/wp-content/uploads/2020/05/icono_sombra.png",
+        shadowSize: [35, 50],
+        shadowAnchor: [0, 55],
+        popupAnchor: [0, -40]});  
+	  
+	        var Icono6 = L.icon({
+        iconUrl: "imagenes/6.png",
+        iconSize: [30, 40],
+        iconAnchor: [15, 40],
+        shadowUrl: "https://vivaelsoftwarelibre.com/wp-content/uploads/2020/05/icono_sombra.png",
+        shadowSize: [35, 50],
+        shadowAnchor: [0, 55],
+        popupAnchor: [0, -40]});  
+	  
+	        var Icono7 = L.icon({
+        iconUrl: "imagenes/7.png",
+        iconSize: [30, 40],
+        iconAnchor: [15, 40],
+        shadowUrl: "https://vivaelsoftwarelibre.com/wp-content/uploads/2020/05/icono_sombra.png",
+        shadowSize: [35, 50],
+        shadowAnchor: [0, 55],
+        popupAnchor: [0, -40]});  
+	  
+	        var Icono8 = L.icon({
+        iconUrl: "imagenes/8.png",
+        iconSize: [30, 40],
+        iconAnchor: [15, 40],
+        shadowUrl: "https://vivaelsoftwarelibre.com/wp-content/uploads/2020/05/icono_sombra.png",
+        shadowSize: [35, 50],
+        shadowAnchor: [0, 55],
+        popupAnchor: [0, -40]});  
+	  
+	        var Icono9 = L.icon({
+        iconUrl: "imagenes/9.png",
+        iconSize: [30, 40],
+        iconAnchor: [15, 40],
+        shadowUrl: "https://vivaelsoftwarelibre.com/wp-content/uploads/2020/05/icono_sombra.png",
+        shadowSize: [35, 50],
+        shadowAnchor: [0, 55],
+        popupAnchor: [0, -40]});
+	  
+	        var Icono10 = L.icon({
+        iconUrl: "imagenes/10.png",
+        iconSize: [30, 40],
+        iconAnchor: [15, 40],
+        shadowUrl: "https://vivaelsoftwarelibre.com/wp-content/uploads/2020/05/icono_sombra.png",
+        shadowSize: [35, 50],
+        shadowAnchor: [0, 55],
+        popupAnchor: [0, -40]});
+	  
+	       var batallon = L.icon({
+        iconUrl: "imagenes/batallon.png",
+        iconSize: [50, 50],
+        iconAnchor: [15, 40],
+        shadowUrl: "https://vivaelsoftwarelibre.com/wp-content/uploads/2020/05/icono_sombra.png",
+        shadowSize: [35, 50],
+        shadowAnchor: [0, 55],
+        popupAnchor: [0, -40]});
+	  
+	       var policia = L.icon({
+        iconUrl: "imagenes/policia.png",
+        iconSize: [50, 50],
+        iconAnchor: [15, 40],
+        shadowUrl: "https://vivaelsoftwarelibre.com/wp-content/uploads/2020/05/icono_sombra.png",
+        shadowSize: [35, 50],
+        shadowAnchor: [0, 55],
+        popupAnchor: [0, -40]});
+	  
+	     var finca = L.icon({
+        iconUrl: "imagenes/finca.png",
+        iconSize: [55, 55],
+        iconAnchor: [15, 40],
+        shadowUrl: "https://vivaelsoftwarelibre.com/wp-content/uploads/2020/05/icono_sombra.png",
+        shadowSize: [35, 50],
+        shadowAnchor: [0, 55],
+        popupAnchor: [0, -40]});
+	  
+	    var briprima = L.icon({
+        iconUrl: "imagenes/briprima.png",
+        iconSize: [65, 65],
+        iconAnchor: [15, 40],
+        shadowUrl: "https://vivaelsoftwarelibre.com/wp-content/uploads/2020/05/icono_sombra.png",
+        shadowSize: [35, 50],
+        shadowAnchor: [0, 55],
+        popupAnchor: [0, -40]});
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+    var Canutal = L.marker([9.4532193,-75.140334], {
+        title: "canutal", 
+        draggable:true, 
+        opacity: 1,
+        icon: Icono
+            }).bindPopup("<h2>Canutal</h2>")
+            .addTo(map);
+        
+    var el_salado = L.marker([9.5824141,-75.0398984], {
+        title: "el salado", 
+        draggable:false, 
+        opacity: 1,
+        icon: Icono2
+            }).bindPopup("<h2>El Salado</h2>")
+            .addTo(map);
+        
+    var mampujan = L.marker([9.9921936,-75.2365513], {
+        title: "Mampuján", 
+        draggable:false, 
+        opacity: 1,
+        icon: Icono3
+            }).bindPopup("<h2>Mampuján, Las Brisas y San Cayetano</h2>")
+            .addTo(map);
+	  
+	  var hato_nuevo = L.marker([9.7327049,-75.0677455], {
+        title: "Hato nuevo", 
+        draggable:false, 
+        opacity: 1,
+        icon: Icono4
+            }).bindPopup("<h2>Hato nuevo</h2>")
+            .addTo(map);
+	  
+	   var la_libertad = L.marker([9.7176675,-75.1320332], {
+        title: "La libertad", 
+        draggable:false, 
+        opacity: 1,
+        icon: Icono5
+            }).bindPopup("<h2>La libertad</h2>")
+            .addTo(map);
+	  
+	   var curva_del_diablo = L.marker([9.4550964,-75.4445467], {
+        title: "curva del diablo", 
+        draggable:false, 
+        opacity: 1,
+        icon: Icono6
+            }).bindPopup("<h2>Curva del diablo</h2>")
+            .addTo(map);
+	  
+	   var chinulito = L.marker([9.6000109,-75.3920548], {
+        title: "Chinulito y el cerro", 
+        draggable:false, 
+        opacity: 1,
+        icon: Icono7
+            }).bindPopup("<h2>Chinulito y El Cerro</h2>")
+            .addTo(map);
+	  
+	  var macayepo = L.marker([9.6807917,-75.3431142], {
+        title: "Macayepo", 
+        draggable:false, 
+        opacity: 1,
+        icon: Icono8
+            }).bindPopup("<h2>Macayepo</h2>")
+            .addTo(map);
+	  
+	   var carmen_de_bolivar = L.marker([9.7159586,-75.1239535], {
+        title: "Carmen de bolívar", 
+        draggable:false, 
+        opacity: 1,
+        icon: Icono9
+            }).bindPopup("<h2>Carmen de Bolívar</h2>")
+            .addTo(map);
+	  
+	  var chengue = L.marker([9.6519553,-75.3021401], {
+        title: "Chengue", 
+        draggable:false, 
+        opacity: 1,
+        icon: Icono10
+            }).bindPopup("<h2>Chengue</h2>")
+            .addTo(map);
+	  
+	  
+	  
+	    var cartagena = L.marker([10.3987536,-75.5894791], {
+        title: "Batallon", 
+        draggable:false, 
+        opacity: 1,
+        icon: batallon
+            }).bindPopup("<h2>Batallón de Policía Naval Militar No. 21</h2>")
+            .addTo(map);
+	  
+	   var cartagena = L.marker([10.3890623,-75.490637], {
+        title: "comando", 
+        draggable:false, 
+        opacity: 1,
+        icon: policia
+            }).bindPopup("<h2>Comando Departamental de Bolívar</h2>")
+            .addTo(map);
+	  
+	    var mahates = L.marker([10.2350589,-75.1956748], {
+        title: "Batallon", 
+        draggable:false, 
+        opacity: 1,
+        icon: batallon
+            }).bindPopup("<h2>Batallón de Fusileros de IM. No. 3</h2>")
+            .addTo(map);
+	  
+	    var el_guamo = L.marker([10.031253,-74.9804869], {
+        title: "Batallon", 
+        draggable:false, 
+        opacity: 1,
+        icon: batallon
+            }).bindPopup("<h2>Batallón de Fusileros de I.M. No. 2.</h2>")
+            .addTo(map);
+	  
+	   var san_onofre = L.marker([9.738004,-75.5268488], {
+        title: "policia", 
+        draggable:false, 
+        opacity: 1,
+        icon: policia
+            }).bindPopup("<h2>Policía de San Onofre</h2>")
+            .addTo(map);
+	  
+	   var carmen_de_bolivar = L.marker([9.7735478,-75.1585168], {
+        title: "policia", 
+        draggable:false, 
+        opacity: 1,
+        icon: policia
+            }).bindPopup("<h2>Tercer Distrito de Policía de Carmen de Bolívar </h2>")
+            .addTo(map);
+	  
+	  var zambrano = L.marker([9.7577975,-74.9406015], {
+        title: "Batallon", 
+        draggable:false, 
+        opacity: 1,
+        icon: batallon
+            }).bindPopup("<h2>Batallón de Contraguerrilla de I.M. No. 31</h2>")
+            .addTo(map);
+	  
+	   var tolu_viejo = L.marker([9.4467113,-75.4304057], {
+        title: "Batallon", 
+        draggable:false, 
+        opacity: 1,
+        icon: batallon
+            }).bindPopup("<h2>Batallón de Contraguerrilla de I.M. No. 33</h2>")
+            .addTo(map);
+	  
+	   
+	  
+	   var briprima = L.marker([9.3216633,-75.3113967], {
+        title: "BRIPRIMA", 
+        draggable:false, 
+        opacity: 1,
+        icon: briprima
+            }).bindPopup("<h2>Brigada Primera de Infantería de Marina y Batallón de Fusileros de IM. No. 5</h2>")
+            .addTo(map);
+	  
+	    var sucre = L.marker([9.2989282,-75.39608], {
+        title: "policia", 
+        draggable:false, 
+        opacity: 1,
+        icon: policia
+            }).bindPopup("<h2>Comando Departamental de Sucre</h2>")
+            .addTo(map);
+	 
+	   var el_palmar = L.marker([9.435188,-75.363629], {
+        title: "Finca el Palmar", 
+        draggable:false, 
+        opacity: 1,
+        icon: finca
+            }).bindPopup("<h2>Finca el Palmar, desde donde salieron los paramilitares para cometer las masacres.  </h2>")
+            .addTo(map);
+	  
+	  
+	    </script>
+<!-- fin texto JavaScript LEAFLET-->  
+	   <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js">  </script>
+		   <script src="leaflet-routing-machine.js"></script>
+	  
+<script>	  
+	 L.Routing.control({
+  waypoints: [
+    L.latLng(9.435188,-75.363629),
+    L.latLng(9.5824141,-75.0398984)
+  ]
+}).addTo(map); 
+	   
+	  
+	</script>	
+			
+	</div>
+	
+	
+<!--logos-->
+	<div class="fondo2-cita">
+			
+			<div class="contenedor-logo">
+				<div class="imag">
+										
+					<img src="imagenes/cajar-logo2.png" alt="logo colectivo de abogados JOSÉ ALVEAR RESTREPO"/>				
+						
+				</div>
+			<div class="imag">
+										
+					<img src="imagenes/comision-colombiana-de-juristas.png" alt="logo colectivo de abogados JOSÉ ALVEAR RESTREPO"/>				
+						
+				</div>
+			</div>
+			
+		<br><center><p class="mt-3"><i><span class="h4">© Todos los derechos reservados</span></i></p></center>
+			  <br>
+		
+	</div>
+<!--logos-->	
+	
+</body>
+
+
+	
+	
+<!--archivojs--
+<script type="text/javascript" src="js/mapa.js"></script>
+<!--archivojs-->
+</html>
